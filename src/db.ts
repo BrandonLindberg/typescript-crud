@@ -4,7 +4,7 @@ import { open } from "sqlite";
 export async function initDB() {
     const db = await open({filename: "./database.sqlite", driver: sqlite3.Database});
 
-    await db.exec(`CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY, name TEXT NOT NULL)`);
+    await db.exec(`CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY, name TEXT NOT NULL, quantity INTEGER NOT NULL)`);
 
     return db;
 }
